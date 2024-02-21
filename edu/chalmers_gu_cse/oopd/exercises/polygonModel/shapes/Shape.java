@@ -14,7 +14,7 @@ public abstract class Shape extends JComponent {
     private double rotation = 0; // Degrees clockwise
 
     public Point getCenterPoint() {
-        return centerPoint;
+        return new Point(centerPoint);
     }
 
     public int getScaleX() {
@@ -51,13 +51,17 @@ public abstract class Shape extends JComponent {
 
     public abstract void paint(Graphics g);
 
-    protected static class Point {
+    public static class Point {
         private final int x;
         private final int y;
 
         public Point(int x, int y) {
             this.x = x;
             this.y = y;
+        }
+
+        Point(Point p) {
+            this(p.getX(), p.getY());
         }
 
         public void move(int x, int y) {
