@@ -1,7 +1,5 @@
 package edu.chalmers_gu_cse.oopd.exercises.polygonModel.shapes;
 
-import java.awt.*;
-
 /**
  * Created by Niklas on 2016-02-14.
  */

@@ -28,6 +28,7 @@ import java.util.List;
             try {
                 Thread.sleep(500);
                 update();
+                notifyListeners();
             } catch (InterruptedException e) {
                 running = false;
             }
