@@ -37,7 +37,7 @@ public abstract class Shape extends JComponent {
         this(new Point(x, y));
    }
     public void translate(int x, int y) {
-        centerPoint.move(centerPoint.getX() + x, centerPoint.getY() + y);
+        centerPoint.translate(x, y);
     }
 
     public void scale(int x, int y) {
@@ -52,8 +52,8 @@ public abstract class Shape extends JComponent {
     public abstract void paint(Graphics g);
 
     public static class Point {
-        private final int x;
-        private final int y;
+        private int x;
+        private int y;
 
         public Point(int x, int y) {
             this.x = x;
@@ -64,8 +64,9 @@ public abstract class Shape extends JComponent {
             this(p.getX(), p.getY());
         }
 
-        public void move(int x, int y) {
-
+        public void translate(int x, int y) {
+            this.x += x;
+            this.y += y;
         }
 
         public int getX() {
